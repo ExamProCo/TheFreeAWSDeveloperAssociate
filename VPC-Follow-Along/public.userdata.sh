@@ -2,7 +2,6 @@
 #!/usr/bin/env bash
 su ec2-user
 sudo yum install httpd -y
-sudo service httpd start
 sudo su -c "cat > /var/www/html/index.html <<EOL
 <html>
   <head>
@@ -13,3 +12,5 @@ sudo su -c "cat > /var/www/html/index.html <<EOL
   </body>
 </html>
 EOL"
+
+sudo service httpd start
