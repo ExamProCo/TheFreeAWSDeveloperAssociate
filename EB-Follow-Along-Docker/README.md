@@ -63,6 +63,6 @@ This command will run your image on local port 8080 and container port 8080.
 
 You are now good to go and able to finish the [Elastic Beanstalk Follow Along section](https://www.youtube.com/watch?v=RrKRN9zRBWs&t=7098s)...
 
-Don't forget to join the #AWSCertified Discord channel https://discord.gg/baAq96C
+Don't forget to join the #AWSCertified Discord channel https://discord.gg/nfwweUG
 
 Happy #AWSCertified training and be sure to pass your exam!
