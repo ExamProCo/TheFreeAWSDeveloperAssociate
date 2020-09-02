@@ -43,6 +43,8 @@ docker build --tag study-sync:1.0 .
 
 It will build your image with the commands defined in your Dockerfile and assign a tag to it.
 
+If you run out of disk space on cloud9 at this point, you can [follow these instructions to increase disk space](https://docs.aws.amazon.com/cloud9/latest/user-guide/move-environment.html#move-environment-resize).
+
 To confirm your image, run the following command:
 
 ```
