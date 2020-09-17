@@ -1,5 +1,5 @@
 # we'll use 10 since its same as Amazon Linux 1 default node version
-FROM node:10
+FROM node:10-alpine
 # where our app will be located in the image
 RUN mkdir -p /app
 WORKDIR /app
