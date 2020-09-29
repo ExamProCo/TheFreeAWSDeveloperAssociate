@@ -1,0 +1,20 @@
+[
+  {
+    "Get": {
+      "Key": {
+        "Artist": { "S": "Acme Band" },
+        "SongTitle": { "S": "Happy Day" }
+      },
+      "TableName": "MusicCollection"
+    }
+  },
+  {
+    "Get": {
+      "Key": {
+        "Artist": { "S": "No One You Know" },
+        "SongTitle": { "S": "Call Me Today" }
+      },
+      "TableName": "MusicCollection"
+    }
+  }
+]

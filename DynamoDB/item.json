@@ -1,0 +1,8 @@
+{
+  "Name": { "S": "USS Okinawa" },
+  "Registry": { "S": "NCC-13958" },
+  "ShipClass": { "S": "Excelsior" },
+  "Description": {
+    "S": "Ship commanded by Admiral James Leyton and on which Benjamin Sisko served as first officer."
+  }
+}
