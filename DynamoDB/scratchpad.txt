@@ -1,0 +1,69 @@
+## Create DynamoDB Table
+aws dynamodb create-table \
+    --table-name Starships \
+    --attribute-definitions \
+        AttributeName=ShipClass,AttributeType=S \
+        AttributeName=Registry,AttributeType=S \
+    --key-schema \
+        AttributeName=ShipClass,KeyType=HASH \
+        AttributeName=Registry,KeyType=RANGE \
+    --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5 \
+    --region us-east-1
+    
+## Describe the table
+aws dynamodb describe-table --table-name Starships --output table
+
+## Batch-Write-Item
+aws dynamodb batch-write-item --request-items file://batches/batch-000.json
+aws dynamodb batch-write-item --request-items file://batches/batch-001.json
+aws dynamodb batch-write-item --request-items file://batches/batch-002.json
+aws dynamodb batch-write-item --request-items file://batches/batch-003.json
+aws dynamodb batch-write-item --request-items file://batches/batch-004.json
+aws dynamodb batch-write-item --request-items file://batches/batch-005.json
+aws dynamodb batch-write-item --request-items file://batches/batch-006.json
+aws dynamodb batch-write-item --request-items file://batches/batch-007.json
+aws dynamodb batch-write-item --request-items file://batches/batch-008.json
+aws dynamodb batch-write-item --request-items file://batches/batch-009.json
+aws dynamodb batch-write-item --request-items file://batches/batch-010.json
+aws dynamodb batch-write-item --request-items file://batches/batch-011.json
+aws dynamodb batch-write-item --request-items file://batches/batch-012.json
+
+## Get-Item
+aws dynamodb get-item --table-name Starships --key file://key.json
+
+## Batch-Get-Item
+aws dynamodb batch-get-item --request-items file://request-items.json
+
+## Delete-Item
+aws dynamodb delete-item --table-name Starships --key file://key.json
+
+## Put-Item
+aws dynamodb put-item --table-name Starships --item file://item.json
+
+## Update-Item
+aws dynamodb update-item \
+    --table-name Starships \
+    --key file://key.json \
+    --update-expression "Set #D = :D" \
+    --expression-attribute-names file://expression-attribute-names.json \
+    --expression-attribute-values file://expression-attribute-values.json \
+    --return-values ALL_NEW
+    
+## Scan
+aws dynamodb scan \
+    --table-name Starships \
+    --filter-expression "begins_with(Description, :D)" \
+    --expression-attribute-values '{":D": {"S": "Destroyed"}}'
+    
+## Query
+aws dynamodb query \
+    --table-name Starships \
+    --key-condition-expression "ShipClass = :C" \
+    --expression-attribute-values '{":C": {"S": "Galaxy"}}'
+    
+## Transact
+aws dynamodb transact-get-items \
+    --transact-items file://transact-get-items.json
+    
+aws dynamodb transact-write-items \
+    --transact-items file://transact-write-items.json
