@@ -15,5 +15,9 @@ app.get('/app.js', function(req, res) {
   res.sendFile(path.join(__dirname + '/app.js'));
 });
 
+app.get('/mithril.min.js', function(req, res) {
+  res.sendFile(path.join(__dirname + '/mithril.min.js'));
+});
+
 console.log(`PLANNING TO USE PORT: ${port}`)
 app.listen(port, '0.0.0.0', () => console.log(`Listening on port ${port}!`))
