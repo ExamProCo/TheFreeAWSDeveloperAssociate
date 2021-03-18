@@ -1,3 +1,5 @@
+/*global m*/
+var m;
 var data = {
   title: 'Hello World!',
   selected: null,
@@ -59,5 +61,9 @@ var App = {
     ])
   }
 }
+if(m !== undefined){
+  m.mount(document.body, App);
+}
 
-m.mount(document.body, App)
+
+
